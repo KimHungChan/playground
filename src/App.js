@@ -26,17 +26,16 @@ export default function App() {
     );
   };
 
-  const handleScroll = () => {
-    if (window.scrollY !== 0) {
-      setNavHeight(64);
-      console.log("top");
-    } else {
-      setNavHeight(128);
-    }
-    calculateNavbarHeight();
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY !== 0) {
+        setNavHeight(64);
+        console.log("top");
+      } else {
+        setNavHeight(128);
+      }
+      calculateNavbarHeight();
+    };
     calculateNavbarHeight();
     window.addEventListener("scroll", handleScroll);
   }, []);
